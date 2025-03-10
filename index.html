@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analyzer 🔍📄</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 28px;
+        }
+        p {
+            font-size: 16px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        textarea, input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        button {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: linear-gradient(to right, #feb47b, #ff7e5f);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume Analyzer 🔍</h1>
+        <p>Upload your resume and compare it with the job description! 🚀</p>
+        
+        <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+            <label for="job_description">📌 Job Description:</label>
+            <textarea id="job_description" name="job_description" placeholder="Paste the job description here..." required></textarea>
+            
+            <label for="resume">📂 Upload Resume (PDF):</label>
+            <input type="file" id="resume" name="resume" accept="application/pdf" required>
+            
+            <button type="submit">Analyze 🔍</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

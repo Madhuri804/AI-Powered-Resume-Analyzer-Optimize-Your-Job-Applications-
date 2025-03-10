@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis Result</title>
+</head><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Analysis Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Result</h1>
+        <p><strong>Match Score:</strong> {{ match_score }}%</p>
+        <h2>Extracted Skills</h2>
+        <ul>
+            {% for skill in skills %}
+                <li>{{ skill }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/">Analyze Another Resume</a>
+    </div>
+</body>
+</html>
+
+<body>
+    <h2>Resume Analysis Result</h2>
+    <p><strong>Extracted Skills:</strong> {{ skills }}</p>
+    <p><strong>Match Score with Job Description:</strong> {{ match_score }}%</p>
+    <a href="/">Analyze Another Resume</a>
+</body>
+</html>
